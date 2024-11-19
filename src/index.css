@@ -6,13 +6,13 @@
 
 @font-face {
   font-family: 'mxedruli';
-  src: url('./CSS/fonts/bpg_algeti.otf') format('openType');
+  src: url('./CSS/Fonts/bpg_algeti.otf') format('openType');
 }
 
 
 @font-face {
   font-family: "Georgian";
-  src: url("./CSS/fonts/bpg_extrasquare_mtavruli_2009.ttf")
+  src: url("./CSS/Fonts/bpg_extrasquare_mtavruli_2009.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;

@@ -35,3 +35,14 @@ main{
 .privacy-accept input[type="checkbox"] {
     transform: scale(2); /* Adjust scale factor */
 }
+
+@media screen and (max-width: 370px) {
+    .privacy-accept{
+        flex-direction: column-reverse;
+    }   
+
+    .privacy-accept{
+        width: 100%;
+        margin-inline: 20px;
+    }
+}

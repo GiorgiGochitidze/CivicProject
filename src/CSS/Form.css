@@ -61,3 +61,20 @@ label input:focus {
     align-items: center;
     gap: 10px;
 }
+
+@media screen and (max-width: 620px) {
+    .form-container{
+        width: 100%;
+        margin-inline: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .checkboxes{
+        flex-direction: column;
+    }
+
+    .checkbox-container{
+        flex-direction: column;
+    }
+}

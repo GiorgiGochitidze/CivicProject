@@ -76,7 +76,7 @@ const Form = ({
             />
             <label htmlFor="agree">კი, ვეთანხმები</label>
           </div>
-          <div className="checkbox-container">
+          <div className="checkbox-container checkbox-container2">
             <input
               type="radio"
               name="AgreeOrDisagree"
