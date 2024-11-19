@@ -2,6 +2,7 @@ import { useState } from "react";
 import Form from "./Components/Form";
 import "./CSS/Home.css";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const Home = () => {
   const [userName, setUserName] = useState("");
@@ -22,7 +23,27 @@ const Home = () => {
       return;
     }
 
-    console.log({ userName, userSecondName, agreeOrNot, userClass });
+    if (isPrivacyAccepted == false) {
+      console.log('You have to accept privacy')
+      return
+    }
+
+    axios.post('https://civicproject.onrender.comSendUserData', {
+      userName,
+      userSecondName,
+      agreeOrNot,
+      userClass,
+      isPrivacyAccepted
+    })
+    .then((response) => {
+      console.log(response.data)
+      setTimeout(() => {
+        window.location.reload()
+      }, 1000)
+    })
+    .catch((err) => {
+      console.log('Something went wring while sending data to server', err)
+    })
   };
 
   const handleCheckboxChange = (e) => {
