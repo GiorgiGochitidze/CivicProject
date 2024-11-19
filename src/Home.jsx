@@ -10,6 +10,7 @@ const Home = () => {
   const [agreeOrNot, setAgreeOrNot] = useState(null);
   const [userClass, setUserClass] = useState("");
   const [isPrivacyAccepted, setIsPrivacyAccepted] = useState(false); // State for checkbox
+  const [message, setMessage] = useState("");
 
   const handleSendUserData = () => {
     if (
@@ -24,26 +25,30 @@ const Home = () => {
     }
 
     if (isPrivacyAccepted == false) {
-      console.log('You have to accept privacy')
-      return
+      console.log("You have to accept privacy");
+      return;
     }
 
-    axios.post('https://civicproject.onrender.com/SendUserData', {
-      userName,
-      userSecondName,
-      agreeOrNot,
-      userClass,
-      isPrivacyAccepted
-    })
-    .then((response) => {
-      console.log(response.data)
-      setTimeout(() => {
-        window.location.reload()
-      }, 1000)
-    })
-    .catch((err) => {
-      console.log('Something went wring while sending data to server', err)
-    })
+    axios
+      .post("https://civicproject.onrender.com/SendUserData", {
+        userName,
+        userSecondName,
+        agreeOrNot,
+        userClass,
+        isPrivacyAccepted,
+      })
+      .then((response) => {
+        console.log(response.data);
+        setMessage("გმადლობთ ფორმის შევსებისათვის თქვენი პასუხი შენახულია");
+        setTimeout(() => {
+          window.location.reload();
+          setMessage("")
+        }, 1500);
+      })
+      .catch((err) => {
+        console.log("Something went wring while sending data to server", err);
+        setMessage("მოხდა რაღაც შეცდომა გთხოვთ ცადეთ თავიდან 1 წუთში")
+      });
   };
 
   const handleCheckboxChange = (e) => {
@@ -68,6 +73,7 @@ const Home = () => {
         setAgreeOrNot={setAgreeOrNot}
         userClass={userClass}
         setUserClass={setUserClass}
+        message={message}
       />
 
       <motion.div
@@ -87,15 +93,27 @@ const Home = () => {
         </p>
       </motion.div>
 
-      <motion.button
-        initial={{ opacity: 0, x: 500 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8 }}
-        onClick={handleSendUserData}
-        className="sent-btn"
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          textAlign: "center",
+          gap: "10px",
+        }}
       >
-        გაგზავნა
-      </motion.button>
+        <motion.button
+          initial={{ opacity: 0, x: 500 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.8 }}
+          onClick={handleSendUserData}
+          className="sent-btn"
+        >
+          გაგზავნა
+        </motion.button>
+        {message && <p>{message}</p>}
+      </div>
     </main>
   );
 };

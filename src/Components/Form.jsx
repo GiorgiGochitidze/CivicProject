@@ -6,10 +6,10 @@ const Form = ({
   setUserName,
   userSecondName,
   setUserSecondName,
-  agreeOrNot,
   setAgreeOrNot,
   userClass,
   setUserClass,
+  message,
 }) => {
   const handleAgreeChange = (e) => {
     setAgreeOrNot(e.target.nextSibling.innerText); // Set the text value based on the selected radio button
@@ -114,6 +114,7 @@ const Form = ({
           </div>
         </label>
       </motion.div>
+
     </div>
   );
 };

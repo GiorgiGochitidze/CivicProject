@@ -9,6 +9,9 @@
   src: url('./CSS/Fonts/bpg_algeti.otf') format('openType');
 }
 
+html, body{
+  overflow-x: hidden;
+}
 
 @font-face {
   font-family: "Georgian";
