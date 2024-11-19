@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const GetData = require("./routes/SentData.js"); // Import the route
+const activeServer = require('./routes/ActiveServer.js')
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ mongoose
 
 // Use the GetData route
 app.use("/", GetData);
+app.use("/", activeServer);
 
 app.listen(PORT, () => {
     console.log(`Server is running on localhost:${PORT}`);
