@@ -1,0 +1,37 @@
+main{
+    width: 100%;
+    height: auto;
+    margin-block: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.sent-btn{
+    width: 200px;
+    height: 38px;
+    background-color: rgb(39, 39, 189);
+    color: white;
+    border: 0;    
+    border-radius: 10px;
+}
+
+.sent-btn:hover{
+    cursor: pointer;
+}
+
+.privacy-accept{
+    width: 295px;
+    gap: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.privacy-accept input[type="checkbox"] {
+    transform: scale(2); /* Adjust scale factor */
+}

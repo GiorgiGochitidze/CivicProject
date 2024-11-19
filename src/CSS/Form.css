@@ -1,0 +1,63 @@
+.main-form-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+  width: 500px;
+  height: auto;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  /* border: 2px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+label {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 38px;
+  border: 0;
+  border-bottom: 2px solid lightgray; /* Add a light gray bottom border */
+  transition: 0.2s all;
+}
+
+label input:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(103, 58, 183);
+}
+
+.checkboxes{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#agree,
+#disagree{
+    width: 50px !important;
+}
+
+.checkbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
