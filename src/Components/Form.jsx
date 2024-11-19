@@ -1,4 +1,5 @@
 import "../CSS/Form.css";
+import { motion } from "framer-motion";
 
 const Form = ({
   userName,
@@ -16,15 +17,25 @@ const Form = ({
 
   return (
     <div className="main-form-container">
-      <div className="form-container">
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2 }}
+        className="form-container"
+      >
         <p>
           <strong>თემა:</strong> თქვენი აზრით, არის თუ არა 2020-2024 წლები
           საუკეთესო პერიოდი ადამიანების ცხოვრებაში? იგულისხმება ადამიანური
           კავშირები, ურთიერთობები და კომუნიკაცია.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="form-container">
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3 }}
+        className="form-container"
+      >
         <label htmlFor="userName">
           თქვენი სახელი (ქართულად):
           <input
@@ -35,9 +46,14 @@ const Form = ({
             placeholder="თქვენი პასუხი"
           />
         </label>
-      </div>
+      </motion.div>
 
-      <div className="form-container">
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4 }}
+        className="form-container"
+      >
         <label htmlFor="userSecondName">
           თქვენი გვარი (ქართულად):
           <input
@@ -48,9 +64,14 @@ const Form = ({
             placeholder="თქვენი პასუხი"
           />
         </label>
-      </div>
+      </motion.div>
 
-      <div className="form-container">
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        className="form-container"
+      >
         <label htmlFor="userClass">
           თქვენი კლასი (ქართულად):
           <input
@@ -61,9 +82,14 @@ const Form = ({
             placeholder="მაგ: 11ბ"
           />
         </label>
-      </div>
+      </motion.div>
 
-      <div className="form-container">
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.6 }}
+        className="form-container"
+      >
         ეთანხმებით თუ არა მოცემულ თემას?
         <label className="checkboxes" htmlFor="AgreeOrDisagree">
           <div className="checkbox-container">
@@ -87,7 +113,7 @@ const Form = ({
             <label htmlFor="disagree">არა, არ ვეთანხმები</label>
           </div>
         </label>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "./Components/Form";
 import "./CSS/Home.css";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [userName, setUserName] = useState("");
@@ -10,7 +11,13 @@ const Home = () => {
   const [isPrivacyAccepted, setIsPrivacyAccepted] = useState(false); // State for checkbox
 
   const handleSendUserData = () => {
-    if (!userName || !userSecondName || !agreeOrNot || !userClass || !isPrivacyAccepted) {
+    if (
+      !userName ||
+      !userSecondName ||
+      !agreeOrNot ||
+      !userClass ||
+      !isPrivacyAccepted
+    ) {
       console.log("Please Fill All Fields and accept the privacy terms");
       return;
     }
@@ -24,9 +31,13 @@ const Home = () => {
 
   return (
     <main>
-      <h1 style={{ textAlign: "center" }}>
+      <motion.h1
+        initial={{ opacity: 0, y: -500 }}
+        animate={{ opacity: 1, y: 0 }}
+        style={{ textAlign: "center" }}
+      >
         N14 საჯარო სკოლის, სამოქალაქო პროექტის გამოკითხვა
-      </h1>
+      </motion.h1>
       <Form
         userName={userName}
         setUserName={setUserName}
@@ -38,18 +49,32 @@ const Home = () => {
         setUserClass={setUserClass}
       />
 
-      <div className="privacy-accept">
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.7 }}
+        className="privacy-accept"
+      >
         <input
           type="checkbox"
           checked={isPrivacyAccepted}
           onChange={handleCheckboxChange} // Handle state update
         />
-        <p>მე წავიკითხე წესები და ვაცხადებ, რომ ჩემს მიერ წარმოდგენილი ინფორმაცია არის ნამდვილი</p>
-      </div>
+        <p>
+          მე წავიკითხე წესები და ვაცხადებ, რომ ჩემს მიერ წარმოდგენილი ინფორმაცია
+          არის ნამდვილი
+        </p>
+      </motion.div>
 
-      <button onClick={handleSendUserData} className="sent-btn">
+      <motion.button
+        initial={{ opacity: 0, x: 500 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.8 }}
+        onClick={handleSendUserData}
+        className="sent-btn"
+      >
         გაგზავნა
-      </button>
+      </motion.button>
     </main>
   );
 };
