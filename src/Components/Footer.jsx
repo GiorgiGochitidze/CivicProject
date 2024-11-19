@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <motion.footer initial={{opacity: 0, y: 500}} animate={{opacity: 1, y: 0}} transition={{delay: 0.9}}>
+    <motion.footer initial={{opacity: 0, x: 500}} animate={{opacity: 1, x: 0}} transition={{delay: 0.9}}>
       <p>
         Powered By:{" "}
         <img
