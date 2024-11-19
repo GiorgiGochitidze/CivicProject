@@ -7,7 +7,6 @@ main{
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;
-    overflow-x: hidden;
 }
 
 .sent-btn{
