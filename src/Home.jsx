@@ -28,7 +28,7 @@ const Home = () => {
       return
     }
 
-    axios.post('https://civicproject.onrender.comSendUserData', {
+    axios.post('https://civicproject.onrender.com/SendUserData', {
       userName,
       userSecondName,
       agreeOrNot,
